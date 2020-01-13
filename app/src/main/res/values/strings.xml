@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TodasPorUma</string>
+
+    <!-- Menu-->
+    <string name="menu_register">Cadastrar</string>
+    <string name="menu_accont">Minha Conta</string>
+    <string name="menu_angels">Meus Anjos</string>
+    <string name="menu_configuration">Configurações</string>
+    <string name="menu_about">Sobre o Aplicativo</string>
+    <string name="menu_logout">Sair</string>
+    <string name="menu_home">Tela Inicial</string>
+    <string name="menu_report">Minhas Ocorrências</string>
+
+    <!--spinner-->
+    <string-array name="planets_array">
+        <item>Assédio Moral</item>
+        <item>Assédio Verbal</item>
+        <item>Assédio Virtual</item>
+        <item>Assédio psicológico</item>
+    </string-array>
+
+
+</resources>

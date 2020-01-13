@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    *{
+    margin:10px;
+    }
+.accordion {
+  background-color: #ff6070;
+  color: #000	;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ff6070;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #ffefe8;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
+}
+
+.w3-container{
+margin-top:5%;
+
+
+</style>
+</head>
+<body style="background-color:#ffefe8">
+
+
+<div class="w3-container" align="center" >
+    <!--<h2>podemos colocar um exemplo</h2> -->
+    <img src="logo.png"  alt="Norway" width="25%" height="25%">
+</div>
+
+
+<h3><center>Conheça mais sobre o aplicativo</center></h3>
+<button class="accordion">Problemática</button>
+<div class="panel" style="background-color:	#fedfd8" >
+    <p align="justify" style="color:#000;">
+        O Aplicativo “Todas por uma”, propõe solucionar a problemática de assédio na sociedade atual, sendo ele físico, sexual ou verbal.
+        <br> Usuário do aplicativo poderá utilizar de avisos (pedidos de socorro), enviados para contatos selecionados ou Anjo, para conseguir a ajuda necessária no momento de apuros. </p>
+</div>
+
+<button class="accordion">O que é Assédio?</button>
+<div class="panel" style="background-color:	#fedfd8">
+    <p align="justify" >Eliminar todas as formas de violência contra todas as mulheres e meninas nas esferas públicas e privadas.<br>
+        Incluindo o tráfico e exploeação sexual e de outros tipos.</p>
+</div>
+
+<button class="accordion">Estatistícas</button>
+<div class="panel" style="background-color:	#fedfd8">
+    <p style="color:#000;"><b>Feminicídio</b></p>
+    <p style="color:#000;">1,6 Milhão de Feminicídio no Brasil</p>
+
+    <p style="color:#000;"><b>Assédio Sexual</b></p>
+    <p style="color:#000;">22 Milhões de brasileiras passaram por algum tipo de assédio</p>
+
+    <p style="color:#000;"><b>Conclusão</b></p>
+    <p style="color:#000;" align="justify">A conclusão é viável e devidamente aos casos de sua importância de acontecimento as Mulheres, Jovens, Homossexuais ou qualquer pessoa que esteja sofrendo assédio sexual<br>
+        Sendo uma proposta de investimento para auxiliar a todas as vitímas.</p>
+</div>
+
+
+<script >
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/my_angels"
+        android:checkable="false"
+        android:title="@string/menu_angels"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/report_event"
+        android:checkable="false"
+        android:title="@string/menu_report"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/about"
+        android:checkable="false"
+        android:title="@string/menu_about"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exit"
+        android:checkable="false"
+        android:title="@string/menu_logout"
+        app:showAsAction="never" />
+</menu>

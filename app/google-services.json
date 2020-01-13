@@ -1,0 +1,40 @@
+{
+"project_info": {
+"project_number": "1053516843015",
+"firebase_url": "https://todasporuma-tcc-firebase.firebaseio.com",
+"project_id": "todasporuma-tcc-firebase",
+"storage_bucket": "todasporuma-tcc-firebase.appspot.com"
+},
+"client": [
+{
+"client_info": {
+"mobilesdk_app_id": "1:1053516843015:android:1011600d3298198d9082a2",
+"android_client_info": {
+"package_name": "com.todasporuma"
+}
+},
+"oauth_client": [
+{
+"client_id": "1053516843015-cnak83arbnp8f6ibucfpgtdivg0rtn1j.apps.googleusercontent.com",
+"client_type": 3
+}
+],
+"api_key": [
+{
+"current_key": "AIzaSyCPHd-FhvwxyMf17UQI9M9wg-08YTyVab8"
+}
+],
+"services": {
+"appinvite_service": {
+"other_platform_oauth_client": [
+{
+"client_id": "1053516843015-cnak83arbnp8f6ibucfpgtdivg0rtn1j.apps.googleusercontent.com",
+"client_type": 3
+}
+]
+}
+}
+}
+],
+"configuration_version": "1"
+}
