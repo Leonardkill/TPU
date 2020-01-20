@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.todasporuma.helper.SharedPreferenceHelper;
 import com.todasporuma.helper.ToastHelper;
 import com.todasporuma.model.User;
+import com.todasporuma.model.User1;
 
 import static com.todasporuma.common.Constants.EMAIL_KEY;
 import static com.todasporuma.common.Constants.PASSWORD_KEY;
@@ -59,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!email.isEmpty()) {
                     if (!password.isEmpty()) {
-                        User user = new User();
+                        User1 user = new User1(email,password);
                         user.setEmail(email);
                         user.setPassword(password);
 
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void validate(final User user) {
+    private void validate(final User1 user) {
         FirebaseAuth auth = FirebaseConfiguration.getFirebaseAutenticacao();
         auth.signInWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

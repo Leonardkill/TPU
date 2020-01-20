@@ -13,10 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.UUID;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,6 +36,7 @@ public class ReportEventActivity extends AppCompatActivity  implements DatePicke
     private TextView tvDisplayDate;
     private Spinner spinner_tipo;
     private DatabaseReference mDatabase;
+    FirebaseAuth mFirebaseAuth;
 
     public static Intent createIntent(Context context) {
         return new Intent(context, ReportEventActivity.class);
@@ -51,6 +54,7 @@ public class ReportEventActivity extends AppCompatActivity  implements DatePicke
         spinner_tipo = findViewById(R.id.spinner);
         tvDisplayDate = findViewById(R.id.tvDisplaydate);
         btn_data = findViewById(R.id.btnShowDatePicker);
+        mFirebaseAuth = FirebaseAuth.getInstance();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -106,11 +110,15 @@ public class ReportEventActivity extends AppCompatActivity  implements DatePicke
 
                 else
                     {
-                mDatabase.child("Ocorrencias").child("nameReciver").setValue(nome);
-                mDatabase.child("Ocorrencias").child("descOcorrencia").setValue(descricao);
-                mDatabase.child("Ocorrencias").child("localOcorrencia").setValue(local);
-                mDatabase.child("Ocorrencias").child("tipoOcorrencia").setValue(tipo_spinner);
-                mDatabase.child("Ocorrencias").child("dataOcorrencia").setValue(data);
+
+                String chave = UUID.randomUUID().toString();
+
+
+                mDatabase.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid()).child("Ocorrencias").child(chave).child("nameReciver").setValue(nome);
+                mDatabase.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid()).child("Ocorrencias").child(chave).child("descOcorrencia").setValue(descricao);
+                mDatabase.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid()).child("Ocorrencias").child(chave).child("localOcorrencia").setValue(local);
+                mDatabase.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid()).child("Ocorrencias").child(chave).child("tipoOcorrencia").setValue(tipo_spinner);
+                mDatabase.child("usuarios").child(mFirebaseAuth.getCurrentUser().getUid()).child("Ocorrencias").child(chave).child("dataOcorrencia").setValue(data);
 
                 Toast.makeText(ReportEventActivity.this,"Ocorrência registrada com sucesso",Toast.LENGTH_LONG).show();
 

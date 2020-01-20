@@ -41,6 +41,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.3'
     implementation 'com.google.firebase:firebase-storage:16.1.0'
 
+
+    implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
 

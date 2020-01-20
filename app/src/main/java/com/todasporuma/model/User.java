@@ -10,11 +10,37 @@ public class User {
     private String email;
     private String password;
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    private String endereco;
+    private String celular;
+
     public void save(){
         DatabaseReference database = FirebaseConfiguration.getFirebaseDatabase();
         database.child("usuarios")
                 .child(userId)
                 .setValue(this);
+    }
+
+    public User(String nome,String email,String endereco,String celular){
+        this.name = nome;
+        this.email = email;
+        this.endereco = endereco;
+        this.celular = celular;
     }
 
     @Exclude
